@@ -1,18 +1,6 @@
 #include "sort.h"
 
 /**
- * swap - Swaps two integers.
- * @x: Pointer to the first integer.
- * @y: Pointer to the second integer.
- */
-void swap(int *x, int *y)
-{
-	int temp = *x;
-	*x = *y;
-	*y = temp;
-}
-
-/**
  * bubble_sort - Sorts an array of int in ascending order using Bubble Sort.
  * @array: Pointer to the array to be sorted.
  * @size: Size of the array.
@@ -20,6 +8,7 @@ void swap(int *x, int *y)
 void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
+	int temp;
 
 	for (i = 0; i < size - 1; i++)
 	{
@@ -27,9 +16,9 @@ void bubble_sort(int *array, size_t size)
 		{
 			if (array[j] > array[j + 1])
 			{
-				swap(&array[j], &array[j + 1]);
-
-				/* Print the array after each swap */
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
 
 				print_array(array, size);
 			}
