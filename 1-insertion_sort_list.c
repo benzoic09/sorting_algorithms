@@ -21,7 +21,7 @@ void insertion_sort_list(listint_t **list)
 		{
 			if (temp->prev != NULL)
 				temp->prev->next = current;
-			
+
 			if (current->next != NULL)
 				current->next->prev = temp;
 
@@ -32,7 +32,7 @@ void insertion_sort_list(listint_t **list)
 			temp->prev = current;
 
 			if (current->prev == NULL)
-			*list = current;
+				*list = current;
 
 
 			/* Print the list after each swap */
